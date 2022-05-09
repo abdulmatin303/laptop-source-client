@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Acer",
+        "fee": "46700",
+        "description": "Acer laptop.",
+        "img": "https://i.ibb.co/F3j7WK7/acer2.png"
+    },
+    {
+        "id": 2,
+        "name": "MacBook",
+        "fee": "130000",
+        "description": "MacBook Laptop",
+        "img": "https://i.ibb.co/gwJSgfP/macbook6.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Dell",
+        "fee": "55500",
+        "description": "Dell Laptop",
+        "img": "https://i.ibb.co/VMJJ9tc/dell3.png"
+    },
+    {
+        "id": 4,
+        "name": "Asus",
+        "fee": "78000",
+        "description": "Asus Laptop",
+        "img": "https://i.ibb.co/s2xn6zt/asus4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Lenovo",
+        "fee": "59000",
+        "description": "Lenovo Laptop.",
+        "img": "https://i.ibb.co/2gBDLRg/lenovo5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "HP",
+        "fee": "52000",
+        "description": "HP Laptop.",
+        "img": "https://i.ibb.co/51yzJp0/hp1.jpg"
+    }
+]

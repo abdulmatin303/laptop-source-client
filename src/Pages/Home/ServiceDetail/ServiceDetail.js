@@ -1,12 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { useForm } from "react-hook-form";
+
 import './serviceDetail.css';
 
 const ServiceDetail = () => {
 
+    const { register, handleSubmit } = useForm();
+
     const {serviceId} = useParams();
 
     const [bookDetail, setBookDetail]=useState({})
+
+    const onSubmit = data => {
+        console.log(data);
+        const url = `http://localhost:5000/service/${serviceId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res=> res.json())
+        .then(result =>{
+            console.log(result);
+        } )
+    };
 
     useEffect(()=>{
     fetch(`http://localhost:5000/service/${serviceId}`)
@@ -25,11 +45,21 @@ const ServiceDetail = () => {
                 <div className="card-body">
                     <h5 className="card-title">{bookDetail?.name}</h5>
                     <p className="card-text">${bookDetail?.fee}</p>
+                    <p className="card-text">Available: {bookDetail?.stock}</p>
                     <p className="card-text">{bookDetail?.description}</p>
+                    <p className="card-text">id: {bookDetail?._id}</p>
                     <div>
                         <Link to='/checkout'>
-                        <button className='btn btn-info'>Book Now</button>
+                        <button className='btn btn-info'>Delivered</button>
                         </Link>
+                    </div>
+                    <div className='mt-4'>
+                    <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
+                
+                <input className='mb-2' placeholder='Stock' type="number" {...register("stock")} />
+                
+                <input className='mb-2 bg-info' type="submit" value="Add Quantity" />
+            </form>
                     </div>
                 </div>
             </div>

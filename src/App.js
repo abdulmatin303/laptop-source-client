@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import AddService from './Pages/AddService/AddService';
 import CheckOut from './Pages/Home/CheckOut/CheckOut';
 import Home from './Pages/Home/Home';
 import ServiceDetail from './Pages/Home/ServiceDetail/ServiceDetail';
@@ -23,13 +24,21 @@ function App() {
             <CheckOut></CheckOut>
           </RequireAuth>
         }></Route>
-        
+
+        <Route path='/addservice' element={
+          <RequireAuth>
+            <AddService></AddService>
+          </RequireAuth>
+        }></Route>
+
+
+
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        
+
 
       </Routes>
-      
+
 
 
     </div>

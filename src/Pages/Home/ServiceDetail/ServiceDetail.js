@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 
 import './serviceDetail.css';
@@ -28,6 +28,25 @@ const ServiceDetail = () => {
         } )
     };
 
+    const handleDecreaseStock = data => {
+        console.log(data);
+        const url = `http://localhost:5000/service/${serviceId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res=> res.json())
+        .then(result =>{
+            console.log(result);
+        } )
+    }
+
+
+    
+
     useEffect(()=>{
     fetch(`http://localhost:5000/service/${serviceId}`)
     .then(res=>res.json())
@@ -49,9 +68,9 @@ const ServiceDetail = () => {
                     <p className="card-text">{bookDetail?.description}</p>
                     <p className="card-text">id: {bookDetail?._id}</p>
                     <div>
-                        <Link to='/checkout'>
-                        <button className='btn btn-info'>Delivered</button>
-                        </Link>
+                        
+                        <button className='btn btn-info' onClick={()=> handleDecreaseStock({stock: bookDetail?.stock-1}) }>Delivered</button>
+                        
                     </div>
                     <div className='mt-4'>
                     <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>

@@ -7,6 +7,7 @@ import ServiceDetail from './Pages/Home/ServiceDetail/ServiceDetail';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+import ManageServices from './Pages/ManageServices/ManageServices';
 import Header from './Pages/Shared/Header/Header';
 
 
@@ -28,6 +29,12 @@ function App() {
         <Route path='/addservice' element={
           <RequireAuth>
             <AddService></AddService>
+          </RequireAuth>
+        }></Route>
+
+<Route path='/manage' element={
+          <RequireAuth>
+            <ManageServices></ManageServices>
           </RequireAuth>
         }></Route>
 

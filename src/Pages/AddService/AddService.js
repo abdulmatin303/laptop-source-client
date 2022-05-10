@@ -23,7 +23,7 @@ const AddService = () => {
 
     return (
         <div className='w-50 mx-auto'>
-            <h2>Please Add a Service</h2>
+            <h2  className='text-center text-primary m-4'>Please Add a Service</h2>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                 <input className='mb-2' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
                 <textarea className='mb-2' placeholder='Describtion' {...register("description")} />

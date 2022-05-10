@@ -56,7 +56,7 @@ const Register = () => {
                 
                 <input type="password" name="password" id="" placeholder='Password' required/>
 
-                <input type="submit" className='bg-success text-white my-3'  value="Register" />
+                <input type="submit" className='bg-success text-white my-3 border rounded'  value="Register" />
             </form>
             <p>Already have an account? <Link to="/login" className='text-primary text-decoration-none' >Please Login</Link> </p>
         </div>

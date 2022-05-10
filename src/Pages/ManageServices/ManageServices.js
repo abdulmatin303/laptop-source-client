@@ -1,5 +1,7 @@
 import React from 'react';
 import useServices from '../../hooks/useServices';
+import { Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ManageServices = () => {
     const [services,setServices] = useServices();
@@ -22,7 +24,16 @@ const ManageServices = () => {
 
     return (
         <div className='container'>
-            <h2 className='m-4 text-center'>Manage your service</h2>
+            <h2 className='text-center text-primary m-4'>All Manage Inventories</h2>
+
+            <div className='d-flex justify-content-center m-3'>
+            <button className='bg-info border rounded'>
+            <Nav.Link as={Link} to="/addservice">
+                  Add New Item
+                </Nav.Link>
+            </button>
+            </div>
+
             <div className='row'>
             {
                 services.map(service =>

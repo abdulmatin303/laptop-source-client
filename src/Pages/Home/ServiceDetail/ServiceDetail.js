@@ -66,7 +66,7 @@ const ServiceDetail = () => {
                     <p className="card-text">${bookDetail?.fee}</p>
                     <p className="card-text">Available: {bookDetail?.stock}</p>
                     <p className="card-text">{bookDetail?.description}</p>
-                    <p className="card-text">id: {bookDetail?._id}</p>
+                    <p className="card-text">Supplier: <span className='card-text'>{bookDetail?.supplier}</span></p>
                     <div>
                         
                         <button className='btn btn-info' onClick={()=> handleDecreaseStock({stock: bookDetail?.stock-1}) }>Delivered</button>
@@ -77,7 +77,7 @@ const ServiceDetail = () => {
                 
                 <input className='mb-2' placeholder='Stock' type="number" {...register("stock")} />
                 
-                <input className='mb-2 bg-info' type="submit" value="Add Quantity" />
+                <input className='mb-2 bg-info border rounded p-1' type="submit" value="Add Quantity" />
             </form>
                     </div>
                 </div>

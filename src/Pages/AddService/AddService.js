@@ -26,10 +26,10 @@ const AddService = () => {
             <h2  className='text-center text-primary m-4'>Please Add a Service</h2>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                 <input className='mb-2' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
-                <textarea className='mb-2' placeholder='Describtion' {...register("description")} />
+                <textarea className='mb-2' placeholder='Description' {...register("description")} />
                 <input className='mb-2' placeholder='Price' type="number" {...register("fee")} />
                 <input className='mb-2' placeholder='Image' type="text" {...register("img")} />
-                <input className='mb-2' type="submit" value="Add Service" />
+                <input className='mb-2 border rounded bg-info p-1' type="submit" value="Add Service" />
             </form>
         </div>
     );

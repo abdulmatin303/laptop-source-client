@@ -12,7 +12,7 @@ const Service = (props) => {
     }
 
     return (
-        <div className='col' data-aos="fade-up" data-aos-duration="3000">
+        <div className='col mb-2' data-aos="fade-up" data-aos-duration="3000">
             <div className="card shadow">
                 <img src={img} className="card-img-top" alt="..." />
                 <div className="card-body">

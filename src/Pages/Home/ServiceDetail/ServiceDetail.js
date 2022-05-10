@@ -14,7 +14,7 @@ const ServiceDetail = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/service/${serviceId}`;
+        const url = `https://shielded-plateau-62162.herokuapp.com/service/${serviceId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -30,7 +30,7 @@ const ServiceDetail = () => {
 
     const handleDecreaseStock = data => {
         console.log(data);
-        const url = `http://localhost:5000/service/${serviceId}`;
+        const url = `https://shielded-plateau-62162.herokuapp.com/service/${serviceId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -48,7 +48,7 @@ const ServiceDetail = () => {
     
 
     useEffect(()=>{
-    fetch(`http://localhost:5000/service/${serviceId}`)
+    fetch(`https://shielded-plateau-62162.herokuapp.com/service/${serviceId}`)
     .then(res=>res.json())
     .then(data=>setBookDetail(data))
      },[])
